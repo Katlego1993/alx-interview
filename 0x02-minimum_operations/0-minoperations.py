@@ -1,21 +1,21 @@
 #!/usr/bin/python3
-""" Initialize the minimum Operations
+""" Minimum Operations
     """
 
 
 def minOperations(n: int) -> int:
-    """ Initialize characters with an H """
+    """ Minimum Operations needed to get n H characters """
     next = 'H'
     body = 'H'
-    operations = 0
+    op = 0
     while (len(body) < n):
         if n % len(body) == 0:
-            operations += 2
+            op += 2
             next = body
             body += body
         else:
-            operations += 1
+            op += 1
             body += next
     if len(body) != n:
         return 0
-    return operations
+    return op
